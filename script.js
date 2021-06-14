@@ -1,25 +1,26 @@
 "use strict";
 
 //Раздел 2: Практическая №1
-let numberOfFilms = prompt("Сколько фиьмов вы уже посмотрели?", "");
-let moviesOfFilms = {};
-const actorsOfFilms = {};
-let genresOfFilms = [];
-//let privatOfFilms = false;
+let numberOfFilms = +prompt("Сколько фиьмов вы уже посмотрели?", "");
 
 const personalMovieDB = {
     count: numberOfFilms,
-    movies: moviesOfFilms,
-    actors: actorsOfFilms,
-    genres: genresOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
     privat: false
 };
 
-let lastOfFilms = prompt("Один из последних просмотренных фильмов?","");
-let ratingOfFilms = prompt("На сколько оцените уго?","");
+const a = prompt("Один из последних просмотренных фильмов?",""),
+    b = prompt("Один из последних просмотренных фильмов?",""),
+    c = prompt("Один из последних просмотренных фильмов?",""),
+    d = prompt("Один из последних просмотренных фильмов?","");
 
-moviesOfFilms ={
-    lastOfFilms :  ratingOfFilms
-};
+//можно обратиться так personalMovieDB.movies.a, но тогда добавяться и a, c
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = b;
 
-console.log(moviesOfFilms);
+personalMovieDB.movies.a = b;
+personalMovieDB.movies.c = b;
+
+console.log(personalMovieDB);
