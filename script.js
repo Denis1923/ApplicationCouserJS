@@ -16,11 +16,8 @@ const a = prompt("Один из последних просмотренных ф
     c = prompt("Один из последних просмотренных фильмов?",""),
     d = prompt("Один из последних просмотренных фильмов?","");
 
-//можно обратиться так personalMovieDB.movies.a, но тогда добавяться и a, c
+//можно обратиться так personalMovieDB.movies.a, но тогда добавяться вместо вопроса a, c
 personalMovieDB.movies[a] = b;
 personalMovieDB.movies[c] = b;
-
-personalMovieDB.movies.a = b;
-personalMovieDB.movies.c = b;
 
 console.log(personalMovieDB);
