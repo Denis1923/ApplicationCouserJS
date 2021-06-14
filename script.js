@@ -11,7 +11,8 @@ const personalMovieDB = {
     privat: false
 };
 
-const a = prompt("Один из последних просмотренных фильмов?",""),
+const 
+    a = prompt("Один из последних просмотренных фильмов?",""),
     b = prompt("Один из последних просмотренных фильмов?",""),
     c = prompt("Один из последних просмотренных фильмов?",""),
     d = prompt("Один из последних просмотренных фильмов?","");
@@ -21,3 +22,5 @@ personalMovieDB.movies[a] = b;
 personalMovieDB.movies[c] = b;
 
 console.log(personalMovieDB);
+
+//Раздел 2: Практическая №2
