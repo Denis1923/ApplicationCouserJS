@@ -11,16 +11,43 @@ const personalMovieDB = {
     privat: false
 };
 
-const 
-    a = prompt("Один из последних просмотренных фильмов?",""),
-    b = prompt("Один из последних просмотренных фильмов?",""),
-    c = prompt("Один из последних просмотренных фильмов?",""),
-    d = prompt("Один из последних просмотренных фильмов?","");
+// const 
+//     a = prompt("Один из последних просмотренных фильмов?",""),
+//     b = prompt("На сколько оцените его?",""),
+//     c = prompt("Один из последних просмотренных фильмов?",""),
+//     d = prompt("На сколько оцените его?","");
 
-//можно обратиться так personalMovieDB.movies.a, но тогда добавяться вместо вопроса a, c
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = b;
+// //можно обратиться так personalMovieDB.movies.a, но тогда добавяться вместо вопроса a, c
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = b;
 
-console.log(personalMovieDB);
+// console.log(personalMovieDB);
 
 //Раздел 2: Практическая №2
+for(let i = 0; i <= personalMovieDB.count; i++)
+{
+    i = prompt("Один из последних просмотренных фильмов?","");
+
+    for(let j = 0; j <= personalMovieDB.count; j++)
+    {
+        personalMovieDB.movies[i] = j = prompt("На сколько оцените его?","");
+        if(j == null || personalMovieDB.movies[i].length > 50)
+        {
+            j--;
+            i--;
+            alert("либо пустая строка, либо длинна превышает 50 символов");
+        }
+    }
+}
+
+if(personalMovieDB.count < 10)
+    console.log("Просмотрено довольно мало фильмов");
+else if(personalMovieDB >= 10 && personalMovieDB <= 30)
+    console.log("Вы классический зритель")
+else if(personalMovieDB.count > 30)
+    console.log("Вы киноман");
+else
+    console.log("Произошла ошибка");
+
+
+
