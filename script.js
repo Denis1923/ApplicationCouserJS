@@ -1,7 +1,17 @@
 "use strict";
 
 //Раздел 2: Практическая №1
-let numberOfFilms = +prompt("Сколько фиьмов вы уже посмотрели?", "");
+let numberOfFilms;
+
+function start(){
+    numberOfFilms = +prompt("Сколько фиьмов вы уже посмотрели?", "");
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms))
+    {
+        numberOfFilms = +prompt("Сколько фиьмов вы уже посмотрели", "");
+    }
+}
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -76,7 +86,7 @@ const personalMovieDB = {
 
 //Раздел 2: Практическая №3
 function answerOfFilms(){
-    for(let i = 0; i <= personalMovieDB.count; i++){
+    for(let i = 0; i < personalMovieDB.count; i++){
         const 
             a = prompt("Один из последних просмотренных фильмов?",""),
             b = prompt("На сколько оцените его?","");
@@ -115,13 +125,16 @@ function showMyDB(){
     else
         console.log("Access Denied");
 }
+//2 варинат
+function showMyDB(hidden){
+    if(!hidden)
+        console.log(personalMovieDB);
+}
+
 
 function writeYourGenres(){
-    let j = 1;
-    for (let i = 0; i < 3; i++) {
-        const number = prompt(`Ваш любимый жанр ${j}`, "");
-        personalMovieDB.genres[i] = number;     
-        ++j;      
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1]  = prompt(`Ваш любимый жанр под номером ${i}`, "");       
     }
 }
 
