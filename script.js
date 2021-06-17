@@ -52,19 +52,20 @@ const personalMovieDB = {
             console.log("Access Denied");
     },
     writeYourGenres: function(){
-        for (let i = 1; i <= 3; i++) {
-            let genre = prompt(`Ваш любимый жанр под номером ${i}`, ""); 
+        for (let i = 1; i < 2; i++) {
+            let genre = prompt(`Введите ваши жанры через запятую`, "").toLocaleLowerCase(); 
             if(genre == null || genre === ""){
                 console.log("Error");
                 i--;
             }
             else{
-                personalMovieDB.genres[i - 1] = genre;
+                personalMovieDB.genres = genre.split("; ");
+                personalMovieDB.genres.sort();
             }                       
         }
 
-        personalMovieDB.genres.forEach((item,i) => {
-            console.log(`Любимый жанр ${i + 1} - это ${item}`);
+        personalMovieDB.genres.forEach((item) => {
+            console.log(`Любимый жанры: ${item}`);
         });
     },
     toggleVisibleMyDB: function(){
